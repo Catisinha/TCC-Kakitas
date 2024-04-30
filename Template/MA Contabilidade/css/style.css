@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-scrolled {
-  background: rgba(255, 255, 255, 0.438);
+  background: rgb(255, 255, 255);
   padding: 20px 0;
   height: 72px;
   transition: all 0.5s;
@@ -360,14 +360,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu li:hover > a, .nav-menu > .menu-active > a {
-  color: #9b1646;
+  color: #f388af;
   font-weight: 1000;
-}
-
-.nav-menu li:hover {
-  border: 0.5px solid #fff;
-  border-radius: 50px;
-  align-items: center;
 }
 
 .nav-menu > li {
@@ -395,7 +389,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu ul li:hover > a {
-  color: #18d26e;
+  color: #7d1f41;
 }
 
 .nav-menu ul ul {
