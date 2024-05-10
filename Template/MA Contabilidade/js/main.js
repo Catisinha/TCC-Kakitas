@@ -1,5 +1,12 @@
 jQuery(document).ready(function( $ ) {
 
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
