@@ -662,7 +662,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .icon i {
-  color: #18d26e;
+  color: #7d1f41;
   font-size: 36px;
   line-height: 1;
   transition: 0.5s;
@@ -680,7 +680,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .box:hover .title a {
-  color: #18d26e;
+  color: #7d1f41;
 }
 
 #services .description {
@@ -690,25 +690,69 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 0;
 }
 
-/* Call To Action Section
---------------------------------*/
-#call-to-action {
-  background: linear-gradient(rgba(0, 142, 99, 0.1), rgba(0, 0, 0, 0.1)), url(../img/call-to-action-bg.jpg) fixed center center;
+
+/* services-documentos */
+#services-documentos {
+  background: #fff;
   background-size: cover;
-  padding: 60px 0;
+  padding: 60px 0 40px 0;
 }
 
-#call-to-action h3 {
+#services-documentos .row {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#services-documentos .box {
+  margin-bottom: 30px;
+}
+
+#services-documentos .icon {
+  float: left;
+}
+
+#services-documentos .title {
+  margin-left: 60px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#services-documentos .title a {
+  color: #111;
+}
+
+#services-documentos .description {
+  font-size: 14px;
+  margin-left: 60px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+/* Call To Action Section
+--------------------------------*/
+#documentos {
+  /*background: linear-gradient(#7d1f41, rgba(253, 151, 177, 0.938)), fixed center center;*/
+  background: #7d1f41;
+  background-size: cover;
+  padding: 60px 0 40px 0;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.336);
+  position: relative;
+}
+
+#documentos h3 {
   color: #fff;
   font-size: 28px;
   font-weight: 700;
 }
 
-#call-to-action p {
+#documentos p {
   color: #fff;
 }
 
-#call-to-action .cta-btn {
+#documentos .cta-btn {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
@@ -723,9 +767,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
-#call-to-action .cta-btn:hover {
-  background: #18d26e;
-  border: 2px solid #18d26e;
+#documentos .cta-btn:hover {
+  background: #ffffff;
+  color: #000;
+  font-weight: 500;
 }
 
 /* Call To Action Section
