@@ -1116,6 +1116,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 60px 0;
 }
 
+#team .row{
+  flex-direction: row;
+  justify-content: center;
+}
+
+
 #team .member {
   text-align: center;
   margin-bottom: 20px;
@@ -1176,7 +1182,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #team .member .social a:hover {
-  color: #18d26e;
+  color: #f388af;
 }
 
 #team .member .social i {
