@@ -1017,9 +1017,27 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #7d1f41;
 }
 
-#contact .contact-info address, #contact .contact-info p {
+#contact .contact-info .contact-address,
+#contact .contact-info .contact-phone,
+#contact .contact-info .contact-email{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+#contact .contact-info .col-md-4 p {
+  display: flex;
+  justify-content: center;
+
   margin-bottom: 0;
   color: #000;
+  max-width: 210px;
+}
+
+#contact .contact-info .col-md-4 p a{
+  display: block;
+  width: fit-content;
 }
 
 #contact .contact-info h3 {
@@ -1059,7 +1077,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #7d1f41;
   border: 1px solid #7d1f41;
   display: none;
-  text-align: center;s
+  text-align: center;
   padding: 15px;
   font-weight: 600;
   margin-bottom: 15px;
@@ -1107,6 +1125,19 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #5a1730;
 }
 
+#contact .col-md-4 .contact-instagram a {
+  transition: none;
+  color: #fff;
+}
+
+#contact .col-md-4 .contact-instagram a:hover {
+  color: #f388af;
+}
+
+#contact .col-md-4 .contact-instagram i {
+  font-size: 18px;
+  margin: 0 2px;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
