@@ -1017,27 +1017,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #7d1f41;
 }
 
-#contact .contact-info .contact-address,
-#contact .contact-info .contact-phone,
-#contact .contact-info .contact-email{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
 #contact .contact-info .col-md-4 p {
-  display: flex;
-  justify-content: center;
-
   margin-bottom: 0;
   color: #000;
-  max-width: 210px;
 }
 
 #contact .contact-info .col-md-4 p a{
   display: block;
-  width: fit-content;
+  word-break: break-all;
 }
 
 #contact .contact-info h3 {
