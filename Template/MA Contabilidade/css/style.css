@@ -892,7 +892,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-style: italic;
   margin: 0 auto 15px auto;
 }
-
 @media (min-width: 992px) {
   #testimonials .testimonial-item p {
     width: 80%;
@@ -1141,11 +1140,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #footer .footer-top .footer-info {
   margin-bottom: 30px;
+  margin-right: 40px;
 }
+
 
 #footer .footer-top .footer-info h3 {
   font-size: 34px;
-  margin: 0 0 20px 0;
+  margin: 0 20 20px 0;
   padding: 2px 0 2px 10px;
   line-height: 1;
   font-family: "Montserrat", sans-serif;
@@ -1169,7 +1170,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #eee;
   line-height: 1;
   padding: 8px 0;
-  margin-right: 4px;
+  margin-right: 5px;
   border-radius: 50%;
   text-align: center;
   width: 36px;
@@ -1225,7 +1226,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-links ul li {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ffd2d2;
   padding: 10px 0;
 }
 
