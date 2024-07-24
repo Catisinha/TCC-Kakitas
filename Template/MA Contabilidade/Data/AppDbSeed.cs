@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using TCC-Kakitas.Models;
+using TCCKakitas.Models;
 
-namespace TCC-Kakitas.Data;
+namespace TCCKakitas.Data;
 
 #region Populate Roles - Perfis de Usuário
         List<IdentityRole> roles = new()
@@ -21,20 +21,9 @@ namespace TCC-Kakitas.Data;
         List<IdentityUser> users = new(){
             new IdentityUser(){
                 Id = Guid.NewGuid().ToString(),
-                Email = "admin@amcontabilidadeMona.com",
-                NormalizedEmail = "ADMIN@AMCONTABILIDADEMONA.COM",
-                UserName = "Admin",
-                NormalizedUserName = "ADMIN",
-                LockoutEnabled = false,
-                EmailConfirmed = true,
-            },
-
-            List<IdentityUser> users = new()
-            new IdentityUser(){
-                Id = Guid.NewGuid().ToString(),
-                Email = "admin@amcontabilidadealine.com",
-                NormalizedEmail = "ADMIN@AMCONTABILIDADEALINE.COM",
-                UserName = "Admin",
+                Email = "contatoampmcontabilidade@gmail.com",
+                NormalizedEmail = "CONTATOAMPMCONTABILIDADE@GMAIL.COM",
+                UserName = "Admin",,
                 NormalizedUserName = "ADMIN",
                 LockoutEnabled = false,
                 EmailConfirmed = true,
@@ -44,6 +33,47 @@ namespace TCC-Kakitas.Data;
         foreach (var user in users)
         {
             PasswordHasher<IdentityUser> pass = new();
-            user.PasswordHash = pass.HashPassword(user, "@Etec123");
+            user.PasswordHash = pass.HashPassword(user, "@AMcontabilidade123");
         }
         builder.Entity<IdentityUser>().HasData(users);
+
+        #region Populate Servico
+        List<Servico> Servicos = new() {
+            new Servico() {
+                Id = 1,
+                Nome = "Abertura de Empresa",
+                Foto = "",
+                Filtrar = true,
+                Banner = true
+            },
+            new Servico() {
+                Id = 2,
+                Nome = "Encerramento de Empresa",
+                Foto = "",
+                Filtrar = true,
+                Banner = true
+            },
+            new Servico() {
+                Id = 3,
+                Nome = "Escrituração Contábil/Tributária",
+                Foto = "",
+                Filtrar = true,
+                Banner = true
+            },
+            new Servico() {
+                Id = 4,
+                Nome = "Assessoria para Gestão Financeira",
+                Foto = "",
+                Filtrar = true,
+                Banner = true,
+            },
+            new Servico() {
+                Id = 5,
+                Nome = "Assessoria Trabalhista",
+                Foto = "",
+                Filtrar = true,
+                Banner = true,
+            },
+        };
+        builder.Entity<Categoria>().HasData(servicos);
+        #endregion
