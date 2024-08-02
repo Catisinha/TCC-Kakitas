@@ -1,6 +1,6 @@
 using System.Net.Mail;
 using System.Security.Claims;
-using CozaStore.ViewModels;
+using TCCKakitas.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,4 +1,4 @@
-namespace Cozastore.Models;
+namespace TCCKakitas.Models;
 
 public class ErrorViewModel
 {
