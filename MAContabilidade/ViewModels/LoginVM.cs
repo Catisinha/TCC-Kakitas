@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace TCCKakitas.ViewModels;
+namespace MAContabilidade.ViewModels;
 
 public class LoginVM
 {

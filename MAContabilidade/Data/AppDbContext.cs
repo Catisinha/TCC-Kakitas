@@ -1,9 +1,9 @@
-using TCCKakitas.Models;
-using TCCKakitas.Data;
+using MAContabilidade.Models;
+using MAContabilidade.Data;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace TCCKakitas.Data;
+namespace MAContabilidade.Data;
 
 public class AppDbContext : IdentityDbContext
 {

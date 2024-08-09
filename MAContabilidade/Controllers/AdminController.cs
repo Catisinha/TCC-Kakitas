@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace TCCKakitas.Controllers;
+namespace MAContabilidade.Controllers;
 
 [Authorize(Roles = "Administrador")]
 public class AdminController : Controller

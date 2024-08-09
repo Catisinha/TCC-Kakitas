@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TCCKakitas.Models;
+namespace MAContabilidade.Models;
 
 [Table("Servicos")]
 public class Servicos
