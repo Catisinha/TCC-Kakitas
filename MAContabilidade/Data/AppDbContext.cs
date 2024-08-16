@@ -37,8 +37,8 @@ public class AppDbContext : IdentityDbContext
         List<IdentityUser> users = new(){
             new IdentityUser(){
                 Id = Guid.NewGuid().ToString(),
-                Email = "admin@gcook.com",
-                NormalizedEmail = "ADMIN@GCOOK.COM",
+                Email = "contatoampmcontabilidade@gmail.com",
+                NormalizedEmail = "CONTATOAMPMCONTABILIDADE@GMAIL.COM",
                 UserName = "Admin",
                 NormalizedUserName = "ADMIN",
                 LockoutEnabled = false,
@@ -50,6 +50,7 @@ public class AppDbContext : IdentityDbContext
             PasswordHasher<IdentityUser> pass = new();
             user.PasswordHash = pass.HashPassword(user, "@Etec123");
         }
+        builder.Entity<IdentityUser>().HasData(users);
         #endregion
     }
 
