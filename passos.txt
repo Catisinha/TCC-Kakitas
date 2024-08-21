@@ -1,3 +1,9 @@
 Configurar o Git Local:
 git config --global user.name Catisinha 
 git config --global user.email luacoutinhor@gmail.com
+
+cd MAContabilidade
+
+dotnet ef migrations add InitialCreate
+
+dotnet ef database update
