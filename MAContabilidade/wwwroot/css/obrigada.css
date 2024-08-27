@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #5e122f;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #000000;
+    flex-direction: column;
+}
+
+.text{
+    font-size: 45px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.paragrafo{
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.btn{
+    padding: 15px 55px;
+    background: #fff;
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    transition: all 0.5s;
+}
