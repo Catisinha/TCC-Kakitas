@@ -30,6 +30,17 @@ body {
   box-shadow: 0 0 20px 0 rgb(85, 36, 56);
 }
 
+.container .marca {
+  color: black;
+  padding: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+}
+
 form {
   position: absolute;
   margin-top: 80px;
@@ -46,7 +57,6 @@ form {
 }
 
 .buttonsForm button {
-  cursor: pointer;
   background: transparent;
   border: none;
   position: relative;
@@ -85,6 +95,7 @@ button[type="submit"] {
   font-size: 15px;
   margin-top: 40px;
   cursor: pointer;
+  font-weight: 800;
 }
 
 .divCheck {
