@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Back to top button */
-.back-to-top {
+#footer .back-to-top {
   position: fixed;
   display: none;
   background: #7d1f41;
@@ -53,8 +53,12 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
   right: 15px;
   bottom: 15px;
-  transition: background 0.5s;
+  transition: 0.5s;
   z-index: 11;
+}
+
+#footer .back-to-top:hover {
+  background: #c96e8f;
 }
 
 .back-to-top i {
@@ -1000,7 +1004,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Contact Section
 --------------------------------*/
 #contact {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 #contact .contact-info {
@@ -1136,6 +1140,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 #footer .footer-top {
   background: #7d1f41;
   padding: 60px 0 30px 0;
+
+}
+
+#footer .footer-top .container .row {
+  display: flex;
+  justify-content: space-between;
 }
 
 #footer .footer-top .footer-info {
@@ -1290,13 +1300,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 #footer .footer-top .footer-contact .pag-admin .admin-button {
   position: absolute;
   color: white; /* Cor do texto */
-  padding: 10px 20px; /* Espaçamento interno */
+  padding: 0px 20px; /* Espaçamento interno */
   cursor: pointer; /* Mudança do cursor ao passar o mouse */
   font-size: 16px; /* Tamanho do texto */
   transition: 0.3s;
-  top: 10px;
-  right: 1px;
-
+  top: auto;
+  left: 0px;
 }
 
 .admin-button:hover {
