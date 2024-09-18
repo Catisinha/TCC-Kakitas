@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Roboto+Slab:wght@100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -13,24 +15,27 @@ body{
     background: #5e122f;
 }
 
-.main{
+.main {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    flex-direction: row;
+    flex-direction: column;
     text-align: center;
     line-height: 1;
 }
 
+
 .text{
-    font-size: 45px;
+    font-size: 50px;
     font-weight: 800;
     color: #fff;
     margin-bottom: 30px;
+    font-family: "Roboto Slab", serif;
 }
 
 .paragrafo{
+    font-size: 30px;
     color: #fff;
     margin-bottom: 50px;
     font-weight: 600;
@@ -38,8 +43,9 @@ body{
 
 .cx-home {
     background-color: #e4a3bc;
-    width: 60px;
-    height: 20px;
+    font-size: 25px;
+    width: 100px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +55,7 @@ body{
 .cx-home .home{
     font-size: 20x;
     font-weight: 600;
-    color: #fff;
+    color: #000000;
     cursor: pointer;
     text-decoration: none;
 }
