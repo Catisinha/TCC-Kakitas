@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MAContabilidade.Migrations
 {
     /// <inheritdoc />
-    public partial class MAContabilidade : Migration
+    public partial class criarBanco : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -66,6 +66,23 @@ namespace MAContabilidade.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Servicos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Descricao = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Servicos", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -196,15 +213,44 @@ namespace MAContabilidade.Migrations
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
+            migrationBuilder.CreateTable(
+                name: "Usuario",
+                columns: table => new
+                {
+                    UsuarioId = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Nome = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DataNascimento = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Foto = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuario", x => x.UsuarioId);
+                    table.ForeignKey(
+                        name: "FK_Usuario_AspNetUsers_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "df77fe21-4666-440d-8e57-76ecc6b06cdd", null, "Administrador", "ADMINISTRADOR" });
+                values: new object[] { "7eee7a3e-cd06-45e7-b5f1-baf9fbdf0647", null, "Administrador", "ADMINISTRADOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5fee388a-5a3a-47a0-8722-040ff11d7e79", 0, "85bdab2a-ff39-4be7-a8d2-1d4092853d05", "contatoampmcontabilidade@gmail.com", true, false, null, "CONTATOAMPMCONTABILIDADE@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAENWo0YY5oYUB+apuWNmLsrJ2u18AATjkD9XevVN8P4fN+blepCKN4kLJx+5py2pbBA==", null, false, "364762f5-1c41-4c5f-adc0-cf352f0d537f", false, "Admin" });
+                values: new object[] { "41dd8fdc-fa91-49f1-a00b-8b54e47ab383", 0, "305e14fc-1ce2-4ae9-945d-edcc9f29066c", "contatoampmcontabilidade@gmail.com", true, false, null, "CONTATOAMPMCONTABILIDADE@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEG3npa22+U7S/ck+9UKHpa5nFV4WamKuIEB6eoa2V4CLxXwqxCaDYvLLrgUBrmsjvw==", null, false, "0bf11ede-e1af-4510-8962-28929ed54b76", false, "Admin" });
+
+            migrationBuilder.InsertData(
+                table: "Usuario",
+                columns: new[] { "UsuarioId", "DataNascimento", "Foto", "Nome" },
+                values: new object[] { "41dd8fdc-fa91-49f1-a00b-8b54e47ab383", new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/usuarios/avatar.png", "Monalisa Martins" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -261,6 +307,12 @@ namespace MAContabilidade.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Servicos");
+
+            migrationBuilder.DropTable(
+                name: "Usuario");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

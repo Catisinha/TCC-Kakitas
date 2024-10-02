@@ -2,7 +2,7 @@ using System.Net.Mail;
 
 namespace MAContabilidade.Helpers;
 
-public static class Helpers
+public static class Helper
 {
     public static bool IsValidEmail(string email)
     {

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MAContabilidade.Models;
 
 [Table("Servicos")]
-public class Servicos
+public class Servico
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

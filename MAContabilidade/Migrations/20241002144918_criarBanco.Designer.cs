@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MAContabilidade.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240821132448_AMContabilidade")]
-    partial class AMContabilidade
+    [Migration("20241002144918_criarBanco")]
+    partial class criarBanco
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,60 @@ namespace MAContabilidade.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+
+            modelBuilder.Entity("MAContabilidade.Models.Servico", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Servicos");
+                });
+
+            modelBuilder.Entity("MAContabilidade.Models.Usuario", b =>
+                {
+                    b.Property<string>("UsuarioId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Foto")
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("UsuarioId");
+
+                    b.ToTable("Usuario");
+
+                    b.HasData(
+                        new
+                        {
+                            UsuarioId = "41dd8fdc-fa91-49f1-a00b-8b54e47ab383",
+                            DataNascimento = new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Foto = "/img/usuarios/avatar.png",
+                            Nome = "Monalisa Martins"
+                        });
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -53,7 +107,7 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "29f9bd57-7ece-4331-8d2f-7e0dba34039e",
+                            Id = "7eee7a3e-cd06-45e7-b5f1-baf9fbdf0647",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         });
@@ -150,17 +204,17 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3bfe4dd8-deaf-4c36-8c4e-2695e370d9f8",
+                            Id = "41dd8fdc-fa91-49f1-a00b-8b54e47ab383",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bacb6b7b-86c6-4718-bf6f-221a2278a926",
+                            ConcurrencyStamp = "305e14fc-1ce2-4ae9-945d-edcc9f29066c",
                             Email = "contatoampmcontabilidade@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "CONTATOAMPMCONTABILIDADE@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAENsVS1PZRDrYZhy26BeCe7UUyVHYvfXlcnjTdjN1Fl6Jd5FHGLrTZe6wqw/FT8Bntw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEG3npa22+U7S/ck+9UKHpa5nFV4WamKuIEB6eoa2V4CLxXwqxCaDYvLLrgUBrmsjvw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4a67ab27-afd2-4a64-ae98-44fc1cb5d7b8",
+                            SecurityStamp = "0bf11ede-e1af-4510-8962-28929ed54b76",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -245,6 +299,17 @@ namespace MAContabilidade.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("MAContabilidade.Models.Usuario", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "ContaUsuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ContaUsuario");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

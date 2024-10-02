@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using MAContabilidade.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -10,17 +9,17 @@ namespace MAContabilidade.Data;
 public class AppDbContext : IdentityDbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-    {        
+    {
     }
 
-    //public DbSet<Servico> Servicos { get; set; }
+    public DbSet<Servico> Servicos { get; set; }
+    public DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-       // AppDbSeed seed = new(builder);
 
-       #region Populate Roles - Perfis de Usuário
+        #region Populate Roles - Perfis de Usuário
         List<IdentityRole> roles = new()
         {
             new IdentityRole()
@@ -30,7 +29,7 @@ public class AppDbContext : IdentityDbContext
                NormalizedName = "ADMINISTRADOR"
             }
         };
-       builder.Entity<IdentityRole>().HasData(roles);
+        builder.Entity<IdentityRole>().HasData(roles);
         #endregion
 
         #region Populate IdentityUser
@@ -51,11 +50,19 @@ public class AppDbContext : IdentityDbContext
             user.PasswordHash = pass.HashPassword(user, "@AMContabilidade123");
         }
         builder.Entity<IdentityUser>().HasData(users);
+        
+        List<Usuario> usuarios = new(){
+            new Usuario(){
+                UsuarioId = users[0].Id,
+                Nome = "Monalisa Martins",
+                DataNascimento = DateTime.Parse("21/07/1994"),
+                Foto = "/img/usuarios/avatar.png"
+            }
+        };
+        builder.Entity<Usuario>().HasData(usuarios);
         #endregion
+
+
     }
 
-    private string GetDebuggerDisplay()
-    {
-        return ToString();
-    }
 }
