@@ -93,11 +93,14 @@ button[type="submit"] {
   width: 100%;
   border: none;
   outline: none;
-  padding: 8px 0 8px 15px;
+  padding: 8px 8px 8px 8px;
   font-size: 15px;
   margin-top: 40px;
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .divCheck {
@@ -129,9 +132,9 @@ i {
 }
 
 .Home {
-  background-color: white;
-  height: 20px;
-  width: 50px;
+  background-color: #b91956;
+  height: 22px;
+  width: 60px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -139,12 +142,13 @@ i {
   margin-top: 15px;
 }
 
-.Home .bthome {
+.Home a {
   cursor: pointer;
   background: transparent;
   border: none;
   padding: 10px;
   position: relative;
-  font-weight: 600;
-  color: black;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
 }
