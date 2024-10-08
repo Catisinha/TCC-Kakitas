@@ -40,6 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-top: 290px;
 }
 
 form {
@@ -125,4 +126,25 @@ i {
 
 .iPassword2 {
   top: 190px;
+}
+
+.Home {
+  background-color: white;
+  height: 20px;
+  width: 50px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.Home .bthome {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  position: relative;
+  font-weight: 600;
+  color: black;
 }

@@ -1304,8 +1304,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   cursor: pointer; /* Mudança do cursor ao passar o mouse */
   font-size: 16px; /* Tamanho do texto */
   transition: 0.3s;
-  top: auto;
-  left: 0px;
+  top: 0;
+  left: 380px;
 }
 
 .admin-button:hover {
