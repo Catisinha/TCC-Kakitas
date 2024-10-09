@@ -36,8 +36,8 @@ public class AppDbContext : IdentityDbContext
         List<IdentityUser> users = new(){
             new IdentityUser(){
                 Id = Guid.NewGuid().ToString(),
-                Email = "contatoampmcontabilidade@gmail.com",
-                NormalizedEmail = "CONTATOAMPMCONTABILIDADE@GMAIL.COM",
+                Email = "ampmcontabilidade@outlook.com",
+                NormalizedEmail = "AMPMCONTABILIDADE@OUTLOOK.COM",
                 UserName = "Admin",
                 NormalizedUserName = "ADMIN",
                 LockoutEnabled = false,
@@ -50,7 +50,7 @@ public class AppDbContext : IdentityDbContext
             user.PasswordHash = pass.HashPassword(user, "@AMContabilidade123");
         }
         builder.Entity<IdentityUser>().HasData(users);
-        
+
         List<Usuario> usuarios = new(){
             new Usuario(){
                 UsuarioId = users[0].Id,
@@ -62,7 +62,36 @@ public class AppDbContext : IdentityDbContext
         builder.Entity<Usuario>().HasData(usuarios);
         #endregion
 
-
+        #region Popular Serviços
+        List<Servico> servicos = new() {
+            new() {
+                Id = 1,
+                Nome = "Abertura de Empresa",
+                Descricao = "É um serviço oferecido para novos empreendedores, cuida de todas as etapas burocráticas, desde a escolha do tipo de empresa, registro nos órgãos competentes até a obtenção de CNPJ."
+            },
+            new() {
+                Id = 2,
+                Nome = "Encerramento de Empresa",
+                Descricao = "É um serviço que finaliza atividades empresariais de forma legal, cuidando de todos os procedimentos necessários."
+            },
+            new() {
+                Id = 3,
+                Nome = "Escrituração Contábil/Tributária",
+                Descricao = "É um serviço que registra transações financeiras, garante conformidade fiscal e elabora demonstrações financeiras."
+            },
+            new() {
+                Id = 4,
+                Nome = "Assessoria para Gestão Financeira",
+                Descricao = "Oferece suporte na administração financeira, incluindo planejamento, controle de caixa e análise de desempenho para garantir saúde financeira."
+            },
+            new() {
+                Id = 5,
+                Nome = "Assessoria Trabalhista",
+                Descricao = "Oferece suporte completo na gestão de questões trabalhistas e assegura conformidade legal para sua empresa."
+            },
+        };
+        builder.Entity<Servico>().HasData(servicos);
+        #endregion
     }
 
 }

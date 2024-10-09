@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Servico>
+@{
   Layout = null;
 }
 <!DOCTYPE html>
@@ -232,32 +233,13 @@
         </header>
 
         <div class="row">
-
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-            <h4 class="title"><a href="#documentos">Abertura de Empresa</a></h4>
-            <p class="description">É um serviço oferecido para novos empreendedores, cuida de todas as etapas burocráticas, desde a escolha do tipo de empresa, registro nos órgãos competentes até a obtenção de CNPJ.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
-            <h4 class="title"><a href="#documentos">Encerramento de Empresa</a></h4>
-            <p class="description">É um serviço que finaliza atividades empresariais de forma legal, cuidando de todos os procedimentos necessários.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-paper-outline"></i></div>
-            <h4 class="title"><a href="#documentos">Escrituração Contábil/Tributária</a></h4>
-            <p class="description">É um serviço que registra transações financeiras, garante conformidade fiscal e elabora demonstrações financeiras.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-            <h4 class="title"><a href="#documentos">Assessoria para Gestão Financeira</a></h4>
-            <p class="description">Oferece suporte na administração financeira, incluindo planejamento, controle de caixa e análise de desempenho para garantir saúde financeira.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="icon"><i class="ion-ios-barcode-outline"></i></div>
-            <h4 class="title"><a href="#documentos">Assessoria Trabalhista</a></h4>
-            <p class="description">Oferece suporte completo na gestão de questões trabalhistas e assegura conformidade legal para sua empresa.</p>
-          </div>
+          @foreach (var servico in Model) {
+            <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+              <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
+              <h4 class="title"><a href="#documentos">@servico.Nome</a></h4>
+              <p class="description">@servico.Descricao</p>
+            </div>
+          }
         </div>
 
       </div>

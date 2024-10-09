@@ -15,7 +15,6 @@ public class Servico
     public string Nome { get; set; }
 
     [Required(ErrorMessage = "Por favor, informe a descrição do serviço")]
-    [StringLength(200, ErrorMessage = "A descrição deve possuir no máximo 200 caracteres")]
-
+    [StringLength(500, ErrorMessage = "A descrição deve possuir no máximo 500 caracteres")]
     public string Descricao { get; set; }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MAContabilidade.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241002144918_criarBanco")]
-    partial class criarBanco
+    [Migration("20241009141836_criarbanco")]
+    partial class criarbanco
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,8 +35,8 @@ namespace MAContabilidade.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -46,6 +46,38 @@ namespace MAContabilidade.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Servicos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Descricao = "É um serviço oferecido para novos empreendedores, cuida de todas as etapas burocráticas, desde a escolha do tipo de empresa, registro nos órgãos competentes até a obtenção de CNPJ.",
+                            Nome = "Abertura de Empresa"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Descricao = "É um serviço que finaliza atividades empresariais de forma legal, cuidando de todos os procedimentos necessários.",
+                            Nome = "Encerramento de Empresa"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Descricao = "É um serviço que registra transações financeiras, garante conformidade fiscal e elabora demonstrações financeiras.",
+                            Nome = "Escrituração Contábil/Tributária"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Descricao = "Oferece suporte na administração financeira, incluindo planejamento, controle de caixa e análise de desempenho para garantir saúde financeira.",
+                            Nome = "Assessoria para Gestão Financeira"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Descricao = "Oferece suporte completo na gestão de questões trabalhistas e assegura conformidade legal para sua empresa.",
+                            Nome = "Assessoria Trabalhista"
+                        });
                 });
 
             modelBuilder.Entity("MAContabilidade.Models.Usuario", b =>
@@ -72,7 +104,7 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "41dd8fdc-fa91-49f1-a00b-8b54e47ab383",
+                            UsuarioId = "137bc412-665c-4a40-aaa6-876c4b9adec5",
                             DataNascimento = new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/usuarios/avatar.png",
                             Nome = "Monalisa Martins"
@@ -107,7 +139,7 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7eee7a3e-cd06-45e7-b5f1-baf9fbdf0647",
+                            Id = "45e0fa54-0966-4a66-a49d-9684a5b1d01b",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         });
@@ -204,17 +236,17 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "41dd8fdc-fa91-49f1-a00b-8b54e47ab383",
+                            Id = "137bc412-665c-4a40-aaa6-876c4b9adec5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "305e14fc-1ce2-4ae9-945d-edcc9f29066c",
-                            Email = "contatoampmcontabilidade@gmail.com",
+                            ConcurrencyStamp = "63a2d75d-2e71-48dc-8ddc-0b939b4007b3",
+                            Email = "ampmcontabilidade@outlook.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedEmail = "CONTATOAMPMCONTABILIDADE@GMAIL.COM",
+                            NormalizedEmail = "AMPMCONTABILIDADE@OUTLOOK.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEG3npa22+U7S/ck+9UKHpa5nFV4WamKuIEB6eoa2V4CLxXwqxCaDYvLLrgUBrmsjvw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAnpu0h/jAVU8hT7QgT/BV3WVkpEkiJ2ElCCKDuvHX1ckl1F2lmS91yvPm7Ek9ECnA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0bf11ede-e1af-4510-8962-28929ed54b76",
+                            SecurityStamp = "edb1fd32-68ac-43b1-8228-856482f85a15",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });

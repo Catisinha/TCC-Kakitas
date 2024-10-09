@@ -4,10 +4,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace MAContabilidade.Migrations
 {
     /// <inheritdoc />
-    public partial class criarBanco : Migration
+    public partial class criarbanco : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -77,7 +79,7 @@ namespace MAContabilidade.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Descricao = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
+                    Descricao = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -240,17 +242,29 @@ namespace MAContabilidade.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "7eee7a3e-cd06-45e7-b5f1-baf9fbdf0647", null, "Administrador", "ADMINISTRADOR" });
+                values: new object[] { "45e0fa54-0966-4a66-a49d-9684a5b1d01b", null, "Administrador", "ADMINISTRADOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "41dd8fdc-fa91-49f1-a00b-8b54e47ab383", 0, "305e14fc-1ce2-4ae9-945d-edcc9f29066c", "contatoampmcontabilidade@gmail.com", true, false, null, "CONTATOAMPMCONTABILIDADE@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEG3npa22+U7S/ck+9UKHpa5nFV4WamKuIEB6eoa2V4CLxXwqxCaDYvLLrgUBrmsjvw==", null, false, "0bf11ede-e1af-4510-8962-28929ed54b76", false, "Admin" });
+                values: new object[] { "137bc412-665c-4a40-aaa6-876c4b9adec5", 0, "63a2d75d-2e71-48dc-8ddc-0b939b4007b3", "ampmcontabilidade@outlook.com", true, false, null, "AMPMCONTABILIDADE@OUTLOOK.COM", "ADMIN", "AQAAAAIAAYagAAAAEAnpu0h/jAVU8hT7QgT/BV3WVkpEkiJ2ElCCKDuvHX1ckl1F2lmS91yvPm7Ek9ECnA==", null, false, "edb1fd32-68ac-43b1-8228-856482f85a15", false, "Admin" });
+
+            migrationBuilder.InsertData(
+                table: "Servicos",
+                columns: new[] { "Id", "Descricao", "Nome" },
+                values: new object[,]
+                {
+                    { 1, "É um serviço oferecido para novos empreendedores, cuida de todas as etapas burocráticas, desde a escolha do tipo de empresa, registro nos órgãos competentes até a obtenção de CNPJ.", "Abertura de Empresa" },
+                    { 2, "É um serviço que finaliza atividades empresariais de forma legal, cuidando de todos os procedimentos necessários.", "Encerramento de Empresa" },
+                    { 3, "É um serviço que registra transações financeiras, garante conformidade fiscal e elabora demonstrações financeiras.", "Escrituração Contábil/Tributária" },
+                    { 4, "Oferece suporte na administração financeira, incluindo planejamento, controle de caixa e análise de desempenho para garantir saúde financeira.", "Assessoria para Gestão Financeira" },
+                    { 5, "Oferece suporte completo na gestão de questões trabalhistas e assegura conformidade legal para sua empresa.", "Assessoria Trabalhista" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "UsuarioId", "DataNascimento", "Foto", "Nome" },
-                values: new object[] { "41dd8fdc-fa91-49f1-a00b-8b54e47ab383", new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/usuarios/avatar.png", "Monalisa Martins" });
+                values: new object[] { "137bc412-665c-4a40-aaa6-876c4b9adec5", new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/usuarios/avatar.png", "Monalisa Martins" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
