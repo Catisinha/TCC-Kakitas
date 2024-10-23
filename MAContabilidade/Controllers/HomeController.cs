@@ -22,11 +22,6 @@ public class HomeController : Controller
         return View(servicos);
     }
 
-    public IActionResult Login()
-    {
-        return View();
-    }
-
     public IActionResult Obrigada()
     {
         return View();
