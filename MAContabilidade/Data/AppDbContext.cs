@@ -47,7 +47,7 @@ public class AppDbContext : IdentityDbContext
         foreach (var user in users)
         {
             PasswordHasher<IdentityUser> pass = new();
-            user.PasswordHash = pass.HashPassword(user, "@AMContabilidade123");
+            user.PasswordHash = pass.HashPassword(user, "@MAContabilidade123");
         }
         builder.Entity<IdentityUser>().HasData(users);
 
@@ -60,6 +60,17 @@ public class AppDbContext : IdentityDbContext
             }
         };
         builder.Entity<Usuario>().HasData(usuarios);
+        #endregion
+
+        #region Populate UserRole - Usuário com Perfil
+        List<IdentityUserRole<string>> userRoles = new()
+        {
+            new IdentityUserRole<string>() {
+                UserId = users[0].Id,
+                RoleId = roles[0].Id
+            },
+        };
+        builder.Entity<IdentityUserRole<string>>().HasData(userRoles);
         #endregion
 
         #region Popular Serviços
