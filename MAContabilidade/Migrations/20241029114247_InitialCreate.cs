@@ -242,12 +242,12 @@ namespace MAContabilidade.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "d83c840f-5c0e-44bb-bcb0-3cd6e4c7ec1a", null, "Administrador", "ADMINISTRADOR" });
+                values: new object[] { "291b0917-8a28-4cdf-a12c-e559c9dda3ec", null, "Administrador", "ADMINISTRADOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "0dd19904-b084-42c9-8c5d-ac05f2d42197", 0, "71d77a4b-84b3-484c-a5a2-657a80e0eb60", "ampmcontabilidade@outlook.com", true, false, null, "AMPMCONTABILIDADE@OUTLOOK.COM", "ADMIN", "AQAAAAIAAYagAAAAELxLHA29s3R8RqQXk7Vprn4B3XbJ65pGhq0VyxerDfoFMerIS7zkXUxIIt2XFppJbA==", null, false, "d526dda5-afd3-463a-b4e6-aa775dbc557e", false, "Admin" });
+                values: new object[] { "7be00504-c645-4989-9521-83d00b109386", 0, "bc5dd4a0-1262-4b94-9634-b7fd14dbac71", "ampmcontabilidade@outlook.com", true, false, null, "AMPMCONTABILIDADE@OUTLOOK.COM", "ADMIN", "AQAAAAIAAYagAAAAEGYzJzrlCZeioTTTJzImNXYJAM1Xbam2dAQ7EKmFpoLaWJlqaXIXcgM30BSJqgiQxw==", null, false, "01b3dd4f-620c-47d2-bff2-c095b0afc2bf", false, "Admin" });
 
             migrationBuilder.InsertData(
                 table: "Servicos",
@@ -264,12 +264,12 @@ namespace MAContabilidade.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "d83c840f-5c0e-44bb-bcb0-3cd6e4c7ec1a", "0dd19904-b084-42c9-8c5d-ac05f2d42197" });
+                values: new object[] { "291b0917-8a28-4cdf-a12c-e559c9dda3ec", "7be00504-c645-4989-9521-83d00b109386" });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "UsuarioId", "DataNascimento", "Foto", "Nome" },
-                values: new object[] { "0dd19904-b084-42c9-8c5d-ac05f2d42197", new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/usuarios/avatar.png", "Monalisa Martins" });
+                values: new object[] { "7be00504-c645-4989-9521-83d00b109386", new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/usuarios/avatar.png", "Monalisa Martins" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

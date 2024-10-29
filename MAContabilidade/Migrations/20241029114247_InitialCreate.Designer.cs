@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MAContabilidade.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241023145604_InitialCreate")]
+    [Migration("20241029114247_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -104,7 +104,7 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "0dd19904-b084-42c9-8c5d-ac05f2d42197",
+                            UsuarioId = "7be00504-c645-4989-9521-83d00b109386",
                             DataNascimento = new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/usuarios/avatar.png",
                             Nome = "Monalisa Martins"
@@ -139,7 +139,7 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d83c840f-5c0e-44bb-bcb0-3cd6e4c7ec1a",
+                            Id = "291b0917-8a28-4cdf-a12c-e559c9dda3ec",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         });
@@ -236,17 +236,17 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0dd19904-b084-42c9-8c5d-ac05f2d42197",
+                            Id = "7be00504-c645-4989-9521-83d00b109386",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "71d77a4b-84b3-484c-a5a2-657a80e0eb60",
+                            ConcurrencyStamp = "bc5dd4a0-1262-4b94-9634-b7fd14dbac71",
                             Email = "ampmcontabilidade@outlook.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "AMPMCONTABILIDADE@OUTLOOK.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAELxLHA29s3R8RqQXk7Vprn4B3XbJ65pGhq0VyxerDfoFMerIS7zkXUxIIt2XFppJbA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGYzJzrlCZeioTTTJzImNXYJAM1Xbam2dAQ7EKmFpoLaWJlqaXIXcgM30BSJqgiQxw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d526dda5-afd3-463a-b4e6-aa775dbc557e",
+                            SecurityStamp = "01b3dd4f-620c-47d2-bff2-c095b0afc2bf",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -316,8 +316,8 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "0dd19904-b084-42c9-8c5d-ac05f2d42197",
-                            RoleId = "d83c840f-5c0e-44bb-bcb0-3cd6e4c7ec1a"
+                            UserId = "7be00504-c645-4989-9521-83d00b109386",
+                            RoleId = "291b0917-8a28-4cdf-a12c-e559c9dda3ec"
                         });
                 });
 

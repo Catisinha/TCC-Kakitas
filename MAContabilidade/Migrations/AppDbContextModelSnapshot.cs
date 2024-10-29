@@ -101,7 +101,7 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "137bc412-665c-4a40-aaa6-876c4b9adec5",
+                            UsuarioId = "7be00504-c645-4989-9521-83d00b109386",
                             DataNascimento = new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/usuarios/avatar.png",
                             Nome = "Monalisa Martins"
@@ -136,7 +136,7 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "45e0fa54-0966-4a66-a49d-9684a5b1d01b",
+                            Id = "291b0917-8a28-4cdf-a12c-e559c9dda3ec",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         });
@@ -233,17 +233,17 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "137bc412-665c-4a40-aaa6-876c4b9adec5",
+                            Id = "7be00504-c645-4989-9521-83d00b109386",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "63a2d75d-2e71-48dc-8ddc-0b939b4007b3",
+                            ConcurrencyStamp = "bc5dd4a0-1262-4b94-9634-b7fd14dbac71",
                             Email = "ampmcontabilidade@outlook.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "AMPMCONTABILIDADE@OUTLOOK.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAnpu0h/jAVU8hT7QgT/BV3WVkpEkiJ2ElCCKDuvHX1ckl1F2lmS91yvPm7Ek9ECnA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGYzJzrlCZeioTTTJzImNXYJAM1Xbam2dAQ7EKmFpoLaWJlqaXIXcgM30BSJqgiQxw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "edb1fd32-68ac-43b1-8228-856482f85a15",
+                            SecurityStamp = "01b3dd4f-620c-47d2-bff2-c095b0afc2bf",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -309,6 +309,13 @@ namespace MAContabilidade.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "7be00504-c645-4989-9521-83d00b109386",
+                            RoleId = "291b0917-8a28-4cdf-a12c-e559c9dda3ec"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
