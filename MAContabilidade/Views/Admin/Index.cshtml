@@ -1,6 +1,10 @@
+@inject MAContabilidade.Data.AppDbContext _context
+
 @{
     ViewData["Title"] = "Área Administrativa";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    var servicosCadastrados = _context.Servicos.Count();
 }
 <div class="jumbotron jumbotron-fluid pt-3">
     <div class="container">
@@ -16,7 +20,7 @@
                         <img src="~/img/1.jpg" class="w-100 rounded-top-2" alt="Servicos">
                         <div class="card-body">
                             <h5 class="card-title">Serviços</h5>
-                            <p class="card-text">Cadastrados: 1</p>
+                            <p class="card-text">Cadastrados: @servicosCadastrados</p>
                         </div>
                     </div>
                 </a>

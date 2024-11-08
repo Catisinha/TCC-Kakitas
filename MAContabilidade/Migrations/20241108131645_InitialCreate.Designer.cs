@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MAContabilidade.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241029114247_InitialCreate")]
+    [Migration("20241108131645_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace MAContabilidade.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.7")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -104,7 +104,7 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "7be00504-c645-4989-9521-83d00b109386",
+                            UsuarioId = "7058647f-f83c-42fa-ae33-13d226282244",
                             DataNascimento = new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/usuarios/avatar.png",
                             Nome = "Monalisa Martins"
@@ -139,7 +139,7 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "291b0917-8a28-4cdf-a12c-e559c9dda3ec",
+                            Id = "690b5e10-4395-45bf-945d-86f49e0270cd",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         });
@@ -236,17 +236,17 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7be00504-c645-4989-9521-83d00b109386",
+                            Id = "7058647f-f83c-42fa-ae33-13d226282244",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bc5dd4a0-1262-4b94-9634-b7fd14dbac71",
+                            ConcurrencyStamp = "8cf602da-7584-45da-9baf-ab8058b1ce99",
                             Email = "ampmcontabilidade@outlook.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "AMPMCONTABILIDADE@OUTLOOK.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGYzJzrlCZeioTTTJzImNXYJAM1Xbam2dAQ7EKmFpoLaWJlqaXIXcgM30BSJqgiQxw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEORFVpMMd5GG6uCXd+Dw5LxRi0YxmPsuAuZoeNy7wTUjtVJbaMUCn4d9wU4plSG/KA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "01b3dd4f-620c-47d2-bff2-c095b0afc2bf",
+                            SecurityStamp = "c3ad1e6b-9b31-443f-8c20-0d97c9253466",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -316,8 +316,8 @@ namespace MAContabilidade.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "7be00504-c645-4989-9521-83d00b109386",
-                            RoleId = "291b0917-8a28-4cdf-a12c-e559c9dda3ec"
+                            UserId = "7058647f-f83c-42fa-ae33-13d226282244",
+                            RoleId = "690b5e10-4395-45bf-945d-86f49e0270cd"
                         });
                 });
 

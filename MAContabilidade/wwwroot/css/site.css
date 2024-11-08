@@ -822,7 +822,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 #clients img {
   max-width: 100%;
   opacity: 0.5;
-  transition: 0.3s;
   padding: 30px  10px;
 
 }
@@ -834,7 +833,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #clients .owl-nav, #clients .owl-dots {
   margin-top: 5px;
   text-align: center;
-}
+} 
 
 #clients .owl-dot {
   display: inline-block;
