@@ -1299,18 +1299,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #ddd;
 }
 
-/* Estilo para o botão */
-#footer .footer-top .footer-contact .pag-admin .admin-button {
-  position: absolute;
-  color: white; /* Cor do texto */
-  padding: 0px 20px; /* Espaçamento interno */
-  cursor: pointer; /* Mudança do cursor ao passar o mouse */
-  font-size: 16px; /* Tamanho do texto */
-  transition: 0.3s;
-  top: 0;
-  left: 380px;
-}
-
 .admin-button:hover {
   color: #f388af !important; /* Cor ao passar o mouse */
 }
