@@ -122,9 +122,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.me-2 {
-  
-}
 
 /*--------------------------------------------------------------
 # Intro Section
@@ -820,7 +817,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #clients img {
-  max-width: 100%;
+  max-width: 300px;
+  margin: auto;
   opacity: 0.5;
   padding: 30px  10px;
 
